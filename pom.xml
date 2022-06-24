@@ -42,6 +42,24 @@
       <version>20170516</version>
     </dependency>
 
+    <dependency>  
+      <groupId>log4j</groupId>  
+      <artifactId>log4j</artifactId>  
+      <version>1.2.17</version>  
+    </dependency>  
+
+    <dependency>
+      <groupId>struts</groupId>
+      <artifactId>struts</artifactId>
+      <version>1.2.9</version>
+    </dependency>
+
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>2.11.1</version>
+    </dependency>
+
     <!-- https://mvnrepository.com/artifact/junit/junit -->
     <dependency>
       <groupId>junit</groupId>
@@ -55,6 +73,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
+    <log4j2.version>2.12.1</log4j2.version>
   </properties>
 
 </project>
