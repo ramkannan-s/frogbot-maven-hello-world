@@ -1,4 +1,4 @@
-name: "Frogbot Fix"
+name: "Frogbot Scan and Fix"
 on:
   push:
     # Creating fix pull requests will be triggered by any push to one of the these branches.
@@ -9,6 +9,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  security-events: write
 jobs:
   create-fix-pull-requests:
     runs-on: ubuntu-latest
@@ -25,7 +26,7 @@ jobs:
       - uses: jfrog/frogbot@v2
         env:
           # [Mandatory]
-          # JFrog platform URL
+          # JFrog platform URL (This functionality requires version 3.29.0 or above of Xray)
           JF_URL: ${{ secrets.JF_URL }}
 
           # [Mandatory if JF_ACCESS_TOKEN is not provided]
@@ -49,15 +50,3 @@ jobs:
           # [Mandatory if JF_USER and JF_PASSWORD are not provided]
           # JFrog access token with 'read' permissions on Xray service
           # JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
-
-          # [Optional, default: "."]
-          # Relative path to the project in the git repository
-          # JF_WORKING_DIR: path/to/pom.xml/dir
-
-          # [Optional]
-          # Xray Watches. Learn more about them here: https://www.jfrog.com/confluence/display/JFROG/Configuring+Xray+Watches
-          # JF_WATCHES: <watch-1>,<watch-2>...<watch-n>
-
-          # [Optional]
-          # JFrog project. Learn more about it here: https://www.jfrog.com/confluence/display/JFROG/Projects
-          # JF_PROJECT: <project-key>
