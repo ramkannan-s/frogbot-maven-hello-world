@@ -5,7 +5,7 @@
   <groupId>info.ram.lab.hello</groupId>
   <artifactId>ramlab_hello</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <name>ramlab_hello</name>
   <url>http://maven.apache.org</url>
 
